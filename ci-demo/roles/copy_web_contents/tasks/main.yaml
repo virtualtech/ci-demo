@@ -1,0 +1,6 @@
+---
+- name: Copy index.html
+  copy: src=index.html dest=/var/www/html
+
+- name: Copy phpinfo
+  copy: src=phpinfo dest=/var/www/html

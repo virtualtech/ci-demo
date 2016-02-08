@@ -1,0 +1,5 @@
+open-vm-tools.x86_64,9.4.0-6.el7
+httpd.x86_64,2.4.6-31.el7.centos.2
+php.x86_64,5.4.16-36.el7_1
+php-mbstring.x86_64,5.4.16-36.el7_1
+vtj-test.x86_64,1.2.3

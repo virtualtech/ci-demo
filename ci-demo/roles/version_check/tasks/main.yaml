@@ -1,0 +1,28 @@
+---
+- name: mkdir directory
+  file: >
+    path={{ script_dir }}
+    state=directory
+    owner=root
+    mode=0755
+
+- name: Copy script
+  copy: >
+    src=version_check.sh
+    dest={{ script_dir }}
+    mode=0755
+
+- name: Copy fixed_package.csv
+  copy: src=fixed_package.csv dest={{ script_dir }}
+
+- name: Execute script
+  command: >
+    {{ script_dir }}/version_check.sh
+    chdir={{ script_dir }}
+
+- name: Fetch remote package list
+  fetch: >
+    src={{ script_dir }}/installed_package.csv
+    dest={{ output_dir }}/{{ inventory_hostname }}.csv
+    fail_on_missing=yes
+    flat=yes

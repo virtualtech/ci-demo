@@ -1,0 +1,12 @@
+192.168.1.101:
+  :roles:
+    - base
+    - apache
+    - php
+    - web_contents
+192.168.1.102:
+  :roles:
+    - base
+    - apache
+    - php
+    - web_contents

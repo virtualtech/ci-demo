@@ -1,0 +1,23 @@
+---
+- name: Install Apache
+  yum: name=httpd state=installed
+
+- name: Starting Apache
+  service:
+    name: httpd
+    state: started
+    enabled: yes
+
+- name: Check if firewalld is running
+  command: systemctl is-active firewalld
+  register: firewalld_result
+  changed_when: False
+  ignore_errors: True
+
+- name: Set the port state
+  firewalld: >
+    permanent=True
+    port=80/tcp
+    state=enabled
+  notify: Restart firewalld
+  when: firewalld_result.stdout == "active" 

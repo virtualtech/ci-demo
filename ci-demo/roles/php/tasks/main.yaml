@@ -1,0 +1,14 @@
+---
+- name: Install PHP
+  yum: name={{ item }} state=installed
+  with_items:
+    - php
+    - php-mbstring 
+
+- name: Edit php.ini
+  template: >
+    src=php.ini.j2
+    dest=/etc/php.ini
+    mode=0644
+    backup=yes 
+  notify: Restart apache

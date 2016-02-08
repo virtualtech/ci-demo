@@ -1,0 +1,3 @@
+---
+script_dir: /opt/mdis-ci-demo/version_check
+output_dir: ../package_list
