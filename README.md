@@ -1,4 +1,4 @@
-#CIデモ環境 構築手順書
+# CIデモ環境 構築手順書
 
 この手順書ではJenkins、Ansible、Serverspec、GitLabを利用したCI(Continuous Integration)デモ環境を構築する手順をまとめています。
 
